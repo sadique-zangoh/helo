@@ -165,5 +165,48 @@
             <p>&copy; 2024 Simple Website. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            const btn = document.querySelector('.btn');
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const aboutSection = document.getElementById('about');
+                aboutSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+            const features = document.querySelectorAll('.feature');
+            features.forEach(feature => {
+                feature.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                feature.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
