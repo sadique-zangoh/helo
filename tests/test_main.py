@@ -119,14 +119,10 @@ def test_main_function_exists() -> None:
     from src.main import main
 
     assert callable(main)
-    assert callable(main)
 
 
 def test_main_script_execution_coverage() -> None:
     """Test executing main.py as script to cover __name__ == '__main__' branch."""
-    import subprocess
-    import sys
-
     # Execute the script directly to trigger the if __name__ == '__main__' block
     result = subprocess.run(
         [sys.executable, "src/main.py"],
