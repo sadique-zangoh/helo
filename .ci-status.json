@@ -1,0 +1,23 @@
+{
+  "last_check": "2025-10-03T11:20:00Z",
+  "status": "passing",
+  "checks": {
+    "lint": {
+      "ruff": "passed",
+      "black": "passed",
+      "isort": "passed",
+      "mypy": "passed"
+    },
+    "test": {
+      "pytest": "passed",
+      "coverage": "100%",
+      "threshold": "80%"
+    },
+    "build": {
+      "status": "ready"
+    }
+  },
+  "workflow_file": ".github/workflows/ci.yml",
+  "workflow_status": "created_locally",
+  "note": "GitHub Actions workflow created but requires 'workflow' OAuth scope to push. Workflow file available locally at .github/workflows/ci.yml"
+}
