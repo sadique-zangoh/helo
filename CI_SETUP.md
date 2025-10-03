@@ -78,6 +78,27 @@ To enable CI monitoring on GitHub, one of the following approaches is needed:
    git push origin feature/comprehensive-prepush-fix
    ```
 
+### CI Monitoring Script
+
+A monitoring script is available to check CI status:
+
+```bash
+# Run CI status check
+./.github/scripts/check_ci.sh
+
+# With GitHub token for full API access
+export GITHUB_TOKEN=your_token_here
+./.github/scripts/check_ci.sh
+```
+
+**Current CI Status Check Result**:
+```
+ℹ️  No CI runs found for branch 'feature/comprehensive-prepush-fix'
+   - No workflows have run yet on this branch
+   - Workflows are not configured (due to OAuth scope limitation)
+   - Workflow file ready locally at .github/workflows/ci.yml
+```
+
 ### Verification
 
 Once the workflow is pushed, CI monitoring will:
@@ -86,6 +107,7 @@ Once the workflow is pushed, CI monitoring will:
 - ✅ Provide status checks for all configured jobs
 - ✅ Report coverage metrics
 - ✅ Enable branch protection rules
+- ✅ Be queryable via `.github/scripts/check_ci.sh`
 
 ### Current CI Status
 - **Local Checks**: ✅ All Passing
